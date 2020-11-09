@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>beans</module>
+        <module>dao</module>
+        <module>utils</module>
+        <module>auth</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.11.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.lk</groupId>
+    <artifactId>itrip-project</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>itrip-project</name>
+    <description>爱旅行后端项目</description>
+    <!--  指定打包方式  -->
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <mybatis-plus.version>3.4.0</mybatis-plus.version>
+        <lombok.version>1.18.12</lombok.version>
+        <itrip-beans.version>0.0.1-SNAPSHOT</itrip-beans.version>
+        <spring-boot-starter-data-redis.version>2.3.5.RELEASE</spring-boot-starter-data-redis.version>
+        <spring-boot-starter.version>2.3.5.RELEASE</spring-boot-starter.version>
+        <mybatis-plus-boot-starter.version>3.4.0</mybatis-plus-boot-starter.version>
+        <utils.version>0.0.1-SNAPSHOT</utils.version>
+        <dao.version>0.0.1-SNAPSHOT</dao.version>
+    </properties>
+
+        <!-- 统一管理子模块中用的依赖的版本信息 -->
+    <dependencyManagement>
+        <dependencies>
+            <!--    mybatis-plus   -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--     mybatis-plus-boot-starter     -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+            <!--  swagger2 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger-ui.version}</version>
+            </dependency>
+            <!--    lombok     -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!--    redis    -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot-starter-data-redis.version}</version>
+            </dependency>
+            <!--     spring-boot    -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot-starter.version}</version>
+            </dependency>
+            <!--   itrip-beans  -->
+            <dependency>
+                <groupId>com.lk</groupId>
+                <artifactId>itrip-beans</artifactId>
+                <version>${itrip-beans.version}</version>
+            </dependency>
+            <!--     utils       -->
+            <dependency>
+                <groupId>com.lk</groupId>
+                <artifactId>utils</artifactId>
+                <version>${utils.version}</version>
+            </dependency>\
+            <!--     dao       -->
+            <dependency>
+                <groupId>com.lk</groupId>
+                <artifactId>dao</artifactId>
+                <version>${dao.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
