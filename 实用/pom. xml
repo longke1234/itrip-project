@@ -7,6 +7,7 @@
         <groupId>com.lk</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+<!- 不知道干嘛的-->
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>utils</artifactId>
