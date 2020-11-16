@@ -36,6 +36,8 @@
         <mybatis-plus-boot-starter.version>3.4.0</mybatis-plus-boot-starter.version>
         <utils.version>0.0.1-SNAPSHOT</utils.version>
         <dao.version>0.0.1-SNAPSHOT</dao.version>
+<!--        <aliyun-java-sdk-core.version>4.5.3</aliyun-java-sdk-core.version>-->
+        <fastjson.version>1.2.72</fastjson.version>
     </properties>
 
         <!-- 统一管理子模块中用的依赖的版本信息 -->
@@ -93,12 +95,24 @@
                 <groupId>com.lk</groupId>
                 <artifactId>utils</artifactId>
                 <version>${utils.version}</version>
-            </dependency>\
+            </dependency>
             <!--     dao       -->
             <dependency>
                 <groupId>com.lk</groupId>
                 <artifactId>dao</artifactId>
                 <version>${dao.version}</version>
+            </dependency>
+            <!--   aliyun阿里云短信验证    -->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>4.5.3</version>
+            </dependency>
+            <!--    json工具类    -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

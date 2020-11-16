@@ -1,9 +1,6 @@
 package com.lk.bean;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -76,6 +73,7 @@ public class UserLinkUser implements Serializable {
      */
     @TableField(value = "is_deleted")
     @ApiModelProperty(value="逻辑删除（0:未删除；1：删除）")
+    @TableLogic
     private Integer isDeleted;
 
     /**
@@ -84,6 +82,7 @@ public class UserLinkUser implements Serializable {
     @TableField(value = "link_id_card_type")
     @ApiModelProperty(value="证件类型：(0-身份证，1-护照，2-学生证，3-军人证，4-驾驶证，5-旅行证)")
     private Integer linkIdCardType;
+
 
     private static final long serialVersionUID = 1L;
 }

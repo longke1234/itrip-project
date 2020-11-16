@@ -63,7 +63,7 @@ public class ReturnResult implements Serializable {
      * @return
      */
     public static ReturnResult ok(){
-        return ReturnResult.ok();
+            return ReturnResult.ok(null);
     }
 
     /**
@@ -77,16 +77,26 @@ public class ReturnResult implements Serializable {
         return new ReturnResult(false,errorCode,msg,data);
     }
 
+    public static ReturnResult error(String errorCode,String msg){
+        return error(errorCode,msg,null);
+    }
+
     /**
      * 操作失败，指定错误码枚举对象
      * @param errorCodeEnum
      * @return
      */
     public static ReturnResult error(ErrorCodeEnum errorCodeEnum){
-        return error(errorCodeEnum.getErrorCode(),errorCodeEnum.getMsg(),null);
+        return error(errorCodeEnum.getErrorCode(),errorCodeEnum.getMsg());
     }
 
+    /**
+     * 操作失败，通用
+     * @return
+     */
     public static ReturnResult error(){
         return error(ErrorCodeEnum.FAILED);
     }
+
+
 }

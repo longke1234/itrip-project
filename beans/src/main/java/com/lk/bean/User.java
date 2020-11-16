@@ -1,9 +1,6 @@
 package com.lk.bean;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -12,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
     * 用户表
@@ -22,6 +20,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "itrip_user")
+@ComponentScan(basePackages = "com.lk.handler")
 public class User implements Serializable {
     /**
      * 主键
@@ -93,16 +92,16 @@ public class User implements Serializable {
     @ApiModelProperty(value="百度账号")
     private String baidu;
 
-    @TableField(value = "creation_date")
-    @ApiModelProperty(value="")
+    @TableField(value = "creation_date",fill = FieldFill.INSERT)
+    @ApiModelProperty(value="创建时间")
     private Date creationDate;
 
     @TableField(value = "created_by")
     @ApiModelProperty(value="")
     private Long createdBy;
 
-    @TableField(value = "modify_date")
-    @ApiModelProperty(value="")
+    @TableField(value = "modify_date",fill = FieldFill.INSERT_UPDATE)
+    @ApiModelProperty(value="修改时间")
     private Date modifyDate;
 
     @TableField(value = "modified_by")
@@ -121,6 +120,7 @@ public class User implements Serializable {
      */
     @TableField(value = "is_deleted")
     @ApiModelProperty(value="逻辑删除")
+    @TableLogic
     private Integer isDeleted;
 
     private static final long serialVersionUID = 1L;

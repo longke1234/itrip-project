@@ -1,0 +1,74 @@
+server:
+  port: 8080
+
+  servlet:
+    context-path: /auth
+
+spring:
+  jackson:
+    date-format: yyyy-mm-dd HH:mm:ss
+    time-zone: GMT+8
+
+#邮件相关配置
+  mail:
+    default-encoding: utf-8
+#    邮箱发送服务器地址
+    host: smtp.qq.com
+#   发送邮件
+    username: 2953326432@qq.com
+#    邮件第三方授权码，不是邮箱本身的登录密码
+    password: yilszrpffhszdhei
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          port: 465 #465\u6216994
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
+        display:
+          sendmail: Java
+          sendname: itrip
+        from: 2953326432@qq.com
+
+  application:
+    name: itrip-project
+
+#\u6570\u636E\u5E93\u914D\u7F6E
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/itripdb?serverTimezone=UTC
+    username: root
+    password: root
+    druid:
+      stat-view-servlet:
+        login-username: root
+        login-password: root
+        enabled: true
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+  mapper-locations: classpath:com/lk/mapper/mapperxml/*.xml
+  type-aliases-package: com.lk.bean
+
+logging:
+  level:
+    root: info
+    com.lk.mapper: debug
+
+email:
+  send:
+    enable: true
+
+
+
