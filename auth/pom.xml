@@ -78,6 +78,25 @@
         <dependency>
             <groupId>com.lk</groupId>
             <artifactId>utils</artifactId>
+            <!--     排除utils依赖 json装换依赖       -->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.datatype</groupId>
+                    <artifactId>jackson-datatype-jsr310</artifactId>
+                </exclusion>
+<!--                <exclusion>-->
+<!--                    <groupId>com.auth0</groupId>-->
+<!--                    <artifactId>java-jwt</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.apache.shiro</groupId>-->
+<!--                    <artifactId>shiro-spring</artifactId>-->
+<!--                </exclusion>-->
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.lk</groupId>
@@ -91,7 +110,6 @@
                     <groupId>com.baomidou</groupId>
                     <artifactId>mybatis-plus</artifactId>
                 </exclusion>
-
             </exclusions>
         </dependency>
         <dependency>
@@ -127,5 +145,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

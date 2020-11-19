@@ -10,14 +10,15 @@ public enum ErrorCodeEnum {
     AUTH_USER_ALREADY_EXISTS("30001","用户已存在"),
     AUTH_AUTHENTICATION_FAILED("30002", "用户名或密码错误"),
     AUTH_PARAMETER_ERROR("30003", "用户名密码参数错误，为空"),
-    AUTH_ACTIVATE_FAILED("30004", "邮件注册，激活失败"),
+    AUTH_ACTIVATE_FAILED("30004", "激活失败"),
     AUTH_REPLACEMENT_FAILED("30005", "置换token失败"),
     AUTH_TOKEN_INVALID("30006", "token无效"),
-    AUTH_ILLEGAL_USERCODE("30007", "非法的用户名"),
+    AUTH_ILLEGAL_USERCODE("30007", "非法的用户名,请使用正确的邮箱或手机号注册"),
     AUTH_NOT_ACTIVATE("30008", "用户未激活"),
     AUTH_LOGOUT_SUCCESS("30009", "退出成功"),
     AUTH_NOT_LOGIN("30010", "用户未登录"),
     AUTH_PARAMETER_IS_EMPTY("30011", "参数为空"),
+    AUTH_TOKEN_IS_EMPTY("30012","token为空"),
 
     /*后台*/
     SYSTEM_EXECUTION_ERROR("B0001", "系统执行出错"),

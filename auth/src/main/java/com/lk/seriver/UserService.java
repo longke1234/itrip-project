@@ -7,13 +7,23 @@ import com.lk.condition.UserRegisterCondition;
 public interface UserService extends IService<User>{
     /**
      *用户注册，邮箱注册
+     * @param registerType 注册类型 email or phone
      * @return
      */
-    boolean userRegister(UserRegisterCondition condition);
+    boolean userRegister(UserRegisterCondition condition,String registerType);
 
     /**
-     * 用户注册，手机短信注册
-     * @param user
+     *
+     * @param phoneNum 手机号
+     * @param code 验证码
+     * @return true验证成功，false验证失败
      */
-    void insertUserByPhone(User user);
+    boolean vailDatePhone(String phoneNum,String code);
+
+    /**
+     * 根据用户账号查询用户信息
+     * @param userCode
+     * @return
+     */
+    User findUserByUserCode(String userCode);
 }
