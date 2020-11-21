@@ -21,7 +21,7 @@ public class ReturnResult implements Serializable {
     private static final long serialVersionUID = 8149618151283184365L;
 
     @ApiModelProperty(value = "是否成功")
-    private boolean success;
+    private String success;
 
     @ApiModelProperty(value = "错误码")
     private String errorCode;
@@ -32,7 +32,7 @@ public class ReturnResult implements Serializable {
     @ApiModelProperty(value = "返回数据")
     private Object data;
 
-    private ReturnResult(boolean success, String errorCode, String msg, Object data) {
+    private ReturnResult(String success, String errorCode, String msg, Object data) {
         this.success = success;
         this.errorCode = errorCode;
         this.msg = msg;
@@ -46,7 +46,7 @@ public class ReturnResult implements Serializable {
      * @return
      */
     public static ReturnResult ok(String msg,Object data){
-        return new ReturnResult(true, ErrorCodeEnum.OK.getErrorCode(),msg,data);
+        return new ReturnResult(String.valueOf(true), ErrorCodeEnum.OK.getErrorCode(),msg,data);
     }
 
     /**
@@ -74,7 +74,7 @@ public class ReturnResult implements Serializable {
      * @return
      */
     public static ReturnResult error(String errorCode,String msg,Object data){
-        return new ReturnResult(false,errorCode,msg,data);
+        return new ReturnResult(String.valueOf(false),errorCode,msg,data);
     }
 
     public static ReturnResult error(String errorCode,String msg){

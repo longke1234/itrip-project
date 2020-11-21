@@ -15,6 +15,7 @@ import com.lk.seriver.UserService;
 import com.lk.util.MD5;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -90,17 +91,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                     stringRedisTemplate.opsForValue().set(activeCodeKeyPre+user1.getUserCode(),activationCode,30, TimeUnit.MINUTES);
                     break;
                 case "phone":
-                    //生成验证码
-                    int randomCode = MD5.getRandomCode();
-                    log.info("验证码:{}",randomCode);
-                    if (enableSeanSms){
-                        //发送验证码
-                        smsService.sendMsg(user1.getUserCode(),String.valueOf(randomCode));
-                    }
-                    // 将短信验证码存入redis中，过期时间设为5分分钟
-                    stringRedisTemplate.opsForValue().set(activeCodeKeyPre+user1.getUserCode(),String.valueOf(randomCode),5,TimeUnit.MINUTES);
+                        //生成验证码
+                        int randomCode = MD5.getRandomCode();
+                        log.info("验证码:{}",randomCode);
+                        if (enableSeanSms){
+                            //发送验证码
+                            smsService.sendMsg(user1.getUserCode(),String.valueOf(randomCode));
+                        }
+                        // 将短信验证码存入redis中，过期时间设为5分分钟
+                        stringRedisTemplate.opsForValue().set(activeCodeKeyPre+user1.getUserCode(),String.valueOf(randomCode),5,TimeUnit.MINUTES);
                     break;
-                    default:
+
+                default:
                         break;
             }
         return true;

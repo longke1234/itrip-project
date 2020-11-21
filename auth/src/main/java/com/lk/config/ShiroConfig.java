@@ -1,5 +1,7 @@
-package com.lk.shiro;
+package com.lk.config;
 
+import com.lk.shiro.JwtFilter;
+import com.lk.shiro.MyRealm;
 import org.apache.shiro.mgt.DefaultSecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -11,7 +13,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
-
 import javax.servlet.Filter;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -67,12 +68,17 @@ public class ShiroConfig {
         //指定不要过滤的路径
         Map<String, String> filterRuleMap = new LinkedHashMap<>();
         //登录请求不用通过自定义过滤器 anon表示不需要验证
+        filterRuleMap.put("/api/doregister","anon");
+        filterRuleMap.put("/api/registerbyphone","anon");
+        filterRuleMap.put("/api/validatephone","anon");
+        filterRuleMap.put("/api/ckusr","anon");
         filterRuleMap.put("/api/dologin", "anon");
         filterRuleMap.put("/swagger-ui.html","anon");
         filterRuleMap.put("/swagger-ui.html/**","anon");
         filterRuleMap.put("/swagger-resources/**","anon");
         filterRuleMap.put("/webjars/**","anon");
         filterRuleMap.put("/v2/**", "anon");
+//        filterRuleMap.put("/auth","anon");
         // 所有的请求通过我们自己的JWT filter
         filterRuleMap.put("/**", "jwt");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterRuleMap);

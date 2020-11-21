@@ -8,6 +8,7 @@
         <module>utils</module>
         <module>auth</module>
         <module>utils</module>
+        <module>gateway</module>
     </modules>
 
     <parent>
@@ -43,6 +44,8 @@
         <jackson-datatype-jsr310.version>2.11.3</jackson-datatype-jsr310.version>
         <shiro-spring.version>1.5.2</shiro-spring.version>
         <java-jwt.version>3.7.0</java-jwt.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <spring-cloud-alibaba-dependencies.version>2.2.1.RELEASE</spring-cloud-alibaba-dependencies.version>
     </properties>
 
         <!-- 统一管理子模块中用的依赖的版本信息 -->
@@ -143,6 +146,22 @@
                 <groupId>com.auth0</groupId>
                 <artifactId>java-jwt</artifactId>
                 <version>${java-jwt.version}</version>
+            </dependency>
+            <!--    spring-cloud-dependencies    -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--整合Spring Cloud Alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -36,6 +36,7 @@ public class MailServiceImpl implements MailService {
             simpleMailMessage.setTo(maiTo);
             //指定需要发送的的内容
             simpleMailMessage.setText("你的激活码是："+activationCode);
+            log.info("你的邮箱激活码是：{}",activationCode);
 //            simpleMailMessage.setText("你可真是个蠢货！");
             //主题
             simpleMailMessage.setSubject("偷偷的打开..........");

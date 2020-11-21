@@ -80,7 +80,7 @@ public class UserController {
      * @return
      */
     @ApiOperation(value = "手机号验证",protocols = "HTTP",produces = MediaType.APPLICATION_JSON_VALUE,httpMethod = "POST")
-    @PostMapping(value = "doRegisterByPhone")
+    @PostMapping(value = "/registerbyphone")
     public ReturnResult doRegisterByPhone(@RequestBody @ApiParam(name = "UserRegisterCondition",value = "用户注册条件类") UserRegisterCondition condition){
         //手机格式验证
         if (!this.validPhone(condition.getUserCode())) {
@@ -101,7 +101,7 @@ public class UserController {
      * @return
      */
     @ApiOperation(value = "激活用户",httpMethod = "PUT",produces = MediaType.APPLICATION_JSON_VALUE,protocols = "HTTP")
-    @RequestMapping(value = "/activateByPhone",method = RequestMethod.PUT)
+    @RequestMapping(value = "/validatephone",method = RequestMethod.PUT)
     public ReturnResult activateByPhone(@RequestParam("user")@ApiParam(name = "user",value = "用户名") String phone,
                                         @RequestParam("code")@ApiParam(name = "code",value = "验证码") String code){
         boolean result = userService.vailDatePhone(phone, code);

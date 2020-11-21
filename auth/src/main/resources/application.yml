@@ -5,6 +5,17 @@ server:
     context-path: /auth
 
 spring:
+  application:
+    name: itrip-auth
+  #spring-Cloud相关配置
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+
+
   jackson:
     date-format: yyyy-mm-dd HH:mm:ss
     time-zone: GMT+8
@@ -33,9 +44,6 @@ spring:
           sendmail: Java
           sendname: itrip
         from: 2953326432@qq.com
-
-  application:
-    name: itrip-project
 
 #\u6570\u636E\u5E93\u914D\u7F6E
   datasource:
