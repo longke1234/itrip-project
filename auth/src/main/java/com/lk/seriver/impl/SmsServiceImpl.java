@@ -1,6 +1,5 @@
 package com.lk.seriver.impl;
 
-import com.alibaba.fastjson.JSON;
 import com.aliyuncs.CommonRequest;
 import com.aliyuncs.CommonResponse;
 import com.aliyuncs.DefaultAcsClient;

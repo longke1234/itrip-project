@@ -37,7 +37,8 @@ public enum ErrorCodeEnum {
     MESSAGE_SUBSCRIPTION_ERROR("C0123", "消息订阅出错"),
     MESSAGE_GROUP_NOT_FOUND("C0124", "消息分组未查到"),
     CACHE_SERVICE_ERROR("C0130", "缓存服务出错"),
-    BIZ_DATA_NULL("10000","数据为空"),;
+    BIZ_DATA_NULL("10000","数据为空"),
+    BIZ_PARAMETER_IS_EMPTY("10001","参数为空");
 
     private String errorCode;
     private String msg;

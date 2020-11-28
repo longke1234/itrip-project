@@ -4,8 +4,6 @@ import com.lk.bean.User;
 import com.lk.common.constants.ErrorCodeEnum;
 import com.lk.common.exception.ServiceException;
 import com.lk.seriver.UserService;
-import com.lk.util.JacksonUtil;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -14,11 +12,8 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
-import java.rmi.ServerException;
 
 /**
  * @author : lk

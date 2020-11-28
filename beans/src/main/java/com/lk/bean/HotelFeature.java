@@ -22,11 +22,11 @@ public class HotelFeature implements Serializable {
     private Long id;
 
     @TableField(value = "hotel_id")
-    @ApiModelProperty(value="")
+    @ApiModelProperty(value="酒店id")
     private Long hotelId;
 
     @TableField(value = "feature_id")
-    @ApiModelProperty(value="")
+    @ApiModelProperty(value="特色介绍")
     private Long featureId;
 
     @TableField(value = "creation_date")

@@ -12,8 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
 //@ComponentScan(basePackages = {"com.lk.itripauth","com.lk.handler"})
 @SpringBootApplication()
 public class ItripAuthApplication {
-
-
     public static void main(String[] args) {
         SpringApplication.run(ItripAuthApplication.class, args);
     }

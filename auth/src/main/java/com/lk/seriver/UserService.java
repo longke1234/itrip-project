@@ -10,7 +10,7 @@ public interface UserService extends IService<User>{
      * @param registerType 注册类型 email or phone
      * @return
      */
-    boolean userRegister(UserRegisterCondition condition,String registerType);
+    boolean userRegister(UserRegisterCondition condition, String registerType);
 
     /**
      *
@@ -18,7 +18,7 @@ public interface UserService extends IService<User>{
      * @param code 验证码
      * @return true验证成功，false验证失败
      */
-    boolean vailDatePhone(String phoneNum,String code);
+    boolean vailDatePhone(String phoneNum, String code);
 
     /**
      * 根据用户账号查询用户信息

@@ -15,7 +15,7 @@ spring:
         username: nacos
         password: nacos
 
-
+#  自定义jackson解析格式
   jackson:
     date-format: yyyy-mm-dd HH:mm:ss
     time-zone: GMT+8
@@ -45,7 +45,7 @@ spring:
           sendname: itrip
         from: 2953326432@qq.com
 
-#\u6570\u636E\u5E93\u914D\u7F6E
+# 数据库相关配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/itripdb?serverTimezone=UTC

@@ -73,6 +73,7 @@ public class ShiroConfig {
         filterRuleMap.put("/api/validatephone","anon");
         filterRuleMap.put("/api/ckusr","anon");
         filterRuleMap.put("/api/dologin", "anon");
+        filterRuleMap.put("/api/**", "anon");
         filterRuleMap.put("/swagger-ui.html","anon");
         filterRuleMap.put("/swagger-ui.html/**","anon");
         filterRuleMap.put("/swagger-resources/**","anon");

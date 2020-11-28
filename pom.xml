@@ -9,6 +9,8 @@
         <module>auth</module>
         <module>utils</module>
         <module>gateway</module>
+        <module>biz</module>
+        <module>search</module>
     </modules>
 
     <parent>
@@ -38,7 +40,6 @@
         <mybatis-plus-boot-starter.version>3.4.0</mybatis-plus-boot-starter.version>
         <utils.version>0.0.1-SNAPSHOT</utils.version>
         <dao.version>0.0.1-SNAPSHOT</dao.version>
-        <aliyun-java-sdk-core.version>4.5.3</aliyun-java-sdk-core.version>
         <fastjson.version>1.2.72</fastjson.version>
         <jackson-databind.version>2.11.3</jackson-databind.version>
         <jackson-datatype-jsr310.version>2.11.3</jackson-datatype-jsr310.version>
@@ -46,6 +47,8 @@
         <java-jwt.version>3.7.0</java-jwt.version>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <spring-cloud-alibaba-dependencies.version>2.2.1.RELEASE</spring-cloud-alibaba-dependencies.version>
+        <aliyun-java-sdk-core.version>4.5.3</aliyun-java-sdk-core.version>
+        <spring-boot-starter-data-elasticsearch.version>2.2.11.RELEASE</spring-boot-starter-data-elasticsearch.version>
     </properties>
 
         <!-- 统一管理子模块中用的依赖的版本信息 -->
@@ -114,7 +117,7 @@
             <dependency>
                 <groupId>com.aliyun</groupId>
                 <artifactId>aliyun-java-sdk-core</artifactId>
-                <version>4.5.3</version>
+                <version>${aliyun-java-sdk-core.version}</version>
             </dependency>
             <!--    json工具类    -->
             <dependency>
@@ -163,6 +166,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--      elasticsearch全文搜索引擎      -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>${spring-boot-starter-data-elasticsearch.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

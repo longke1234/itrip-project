@@ -15,15 +15,11 @@ import com.lk.seriver.UserService;
 import com.lk.util.MD5;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.util.StringUtils;
-
 
 import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
@@ -98,8 +94,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                             //发送验证码
                             smsService.sendMsg(user1.getUserCode(),String.valueOf(randomCode));
                         }
-                        // 将短信验证码存入redis中，过期时间设为5分分钟
-                        stringRedisTemplate.opsForValue().set(activeCodeKeyPre+user1.getUserCode(),String.valueOf(randomCode),5,TimeUnit.MINUTES);
+                        // 将短信验证码存入redis中，过期时间设为15分分钟
+                        stringRedisTemplate.opsForValue().set(activeCodeKeyPre+user1.getUserCode(),String.valueOf(randomCode),15,TimeUnit.MINUTES);
                     break;
 
                 default:

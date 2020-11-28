@@ -13,5 +13,5 @@ public interface SmsService {
      * @param to 收信人
      * @param code 验证码
      */
-    void sendMsg(String to,String code);
+    void sendMsg(String to, String code);
 }
